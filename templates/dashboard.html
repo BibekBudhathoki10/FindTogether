@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Find Together</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-brand">
+            <div class="logo-icon">FT</div>
+            <span class="brand-name">Find Together</span>
+        </div>
+        <div class="nav-actions">
+            <ul class="nav-links">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#posts">My Posts</a></li>
+                <li><a href="#browse">Browse</a></li>
+                <li><a href="#messages">Messages</a></li>
+            </ul>
+            <div class="user-info">
+                <div class="user-avatar">{{ user.first_name|first }}{{ user.last_name|first }}</div>
+                <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Stats Overview -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">Lost Items Posted</div>
+                    </div>
+                    <div class="stat-icon lost">📦</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">Found Items Posted</div>
+                    </div>
+                    <div class="stat-icon found">✓</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">Pending Approval</div>
+                    </div>
+                    <div class="stat-icon pending">⏱</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">Unread Messages</div>
+                    </div>
+                    <div class="stat-icon messages">💬</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Posts Section -->
+        <div class="dashboard-section">
+            <div class="section-header">
+                <h2 class="section-title">My Recent Posts</h2>
+                <a href="#" class="btn-new-post">+ New Post</a>
+            </div>
+
+            <div class="posts-grid">
+                <!-- Sample Post Card 1 -->
+                <div class="post-card">
+                    <div class="post-image">📱</div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <span class="post-type lost">Lost</span>
+                            <span class="post-status pending">Pending</span>
+                        </div>
+                        <h3 class="post-title">iPhone 14 Pro</h3>
+                        <p class="post-description">
+                            Lost my iPhone 14 Pro in black color near Central Park. It has a blue protective case.
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-location">📍 Central Park</span>
+                            <span class="post-date">🕐 2 hours ago</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn-action">View</button>
+                            <button class="btn-action">Edit</button>
+                            <button class="btn-action">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Post Card 2 -->
+                <div class="post-card">
+                    <div class="post-image">🎒</div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <span class="post-type found">Found</span>
+                            <span class="post-status approved">Approved</span>
+                        </div>
+                        <h3 class="post-title">Blue Backpack</h3>
+                        <p class="post-description">
+                            Found a blue backpack with books near the library entrance. Contains student ID.
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-location">📍 City Library</span>
+                            <span class="post-date">🕐 1 day ago</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn-action">View</button>
+                            <button class="btn-action">Edit</button>
+                            <button class="btn-action">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Post Card 3 -->
+                <div class="post-card">
+                    <div class="post-image">🔑</div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <span class="post-type lost">Lost</span>
+                            <span class="post-status approved">Approved</span>
+                        </div>
+                        <h3 class="post-title">Car Keys</h3>
+                        <p class="post-description">
+                            Lost my car keys with a red keychain near the parking lot. Please contact if found.
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-location">📍 Mall Parking</span>
+                            <span class="post-date">🕐 3 days ago</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn-action">View</button>
+                            <button class="btn-action">Edit</button>
+                            <button class="btn-action">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Community Posts -->
+        <div class="dashboard-section">
+            <div class="section-header">
+                <h2 class="section-title">Recent Community Posts</h2>
+                <a href="#" class="btn-new-post">View All</a>
+            </div>
+
+            <div class="posts-grid">
+                <!-- Sample Community Post 1 -->
+                <div class="post-card">
+                    <div class="post-image">👜</div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <span class="post-type found">Found</span>
+                        </div>
+                        <h3 class="post-title">Ladies Purse</h3>
+                        <p class="post-description">
+                            Found a brown leather purse near the subway station. Contains some cards and cash.
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-location">📍 Metro Station</span>
+                            <span class="post-date">🕐 5 hours ago</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn-action">View Details</button>
+                            <button class="btn-action">Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Community Post 2 -->
+                <div class="post-card">
+                    <div class="post-image">🐕</div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <span class="post-type lost">Lost</span>
+                        </div>
+                        <h3 class="post-title">Golden Retriever</h3>
+                        <p class="post-description">
+                            Lost my golden retriever named Max. Last seen near the park. Please help find him!
+                        </p>
+                        <div class="post-meta">
+                            <span class="post-location">📍 Riverside Park</span>
+                            <span class="post-date">🕐 12 hours ago</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn-action">View Details</button>
+                            <button class="btn-action">Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty State (uncomment if no posts) -->
+                <!-- 
+                <div class="empty-state">
+                    <div class="empty-state-icon">📭</div>
+                    <h3 class="empty-state-title">No posts yet</h3>
+                    <p class="empty-state-text">Be the first to post a lost or found item!</p>
+                </div>
+                -->
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
