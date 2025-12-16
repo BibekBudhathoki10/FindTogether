@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Together - Reuniting Lost Items with Their Owners</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">🔍</div>
+                <span class="logo-text">Find Together</span>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="{% url 'login' %}" class="btn btn-secondary">Login</a>
+                <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="trust-badge">
+                    <span class="stars">★★★★★</span>
+                    <span>Trusted by over 10,000+ users</span>
+                </div>
+
+                <h1 class="hero-title">
+                    Reunite With Your <span class="highlight">Lost Items</span>
+                </h1>
+
+                <p class="hero-description">
+                    Join our community-driven platform to report lost items or help others find what they've lost.
+                    Together, we make finding easier.
+                </p>
+
+                <div class="search-box">
+                    <select class="search-select">
+                        <option>All Categories</option>
+                        <option>Electronics</option>
+                        <option>Documents</option>
+                        <option>Pets</option>
+                        <option>Accessories</option>
+                        <option>Bags & Luggage</option>
+                        <option>Keys</option>
+                    </select>
+                    <input type="text" class="search-input" placeholder="Search for lost or found items...">
+                    <button class="btn-search">Search</button>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="\static\css\Images\BibekLogo.png" alt="Find Together Community" class="hero-illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="categories-container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Categories</h2>
+                <p class="section-subtitle">Browse items by category to find what you're looking for</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon electronics">📱</div>
+                    <div class="category-info">
+                        <h3>Electronics</h3>
+                        <span class="category-count">324 Items</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon documents">📄</div>
+                    <div class="category-info">
+                        <h3>Documents</h3>
+                        <span class="category-count">189 Items</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon pets">🐕</div>
+                    <div class="category-info">
+                        <h3>Pets</h3>
+                        <span class="category-count">156 Items</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon accessories">👓</div>
+                    <div class="category-info">
+                        <h3>Accessories</h3>
+                        <span class="category-count">267 Items</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon bags">🎒</div>
+                    <div class="category-info">
+                        <h3>Bags & Luggage</h3>
+                        <span class="category-count">142 Items</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon keys">🔑</div>
+                    <div class="category-info">
+                        <h3>Keys</h3>
+                        <span class="category-count">98 Items</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">10,000+</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number">5,240</div>
+                <div class="stat-label">Items Reunited</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number">85%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Community Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="how-it-works">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Simple steps to reunite with your lost items</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Report Lost or Found Items</h3>
+                    <p>Quickly post details about items you've lost or found. Include photos, location, and description
+                        to help match items with their owners.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔎</div>
+                    <h3>Search & Browse</h3>
+                    <p>Browse through posted items by category, location, or date. Use our advanced search to find
+                        exactly what you're looking for.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Connect & Verify</h3>
+                    <p>Message directly with finders or owners through our secure in-app messaging. Verify ownership
+                        details before arranging a meetup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="about">
+        <div class="cta-container">
+            <h2>Ready to Find What You Lost?</h2>
+            <p>Join thousands of users who have successfully reunited with their lost items. Start your search or help
+                others today!</p>
+            <div class="cta-actions">
+                <a href="{% url 'register' %}" class="btn btn-white">Get Started Free</a>
+                <a href="#how-it-works" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Find Together. All rights reserved. | Helping communities reunite with lost items.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -78,3 +78,10 @@ def dashboard_view(request):
         return redirect('login')
     
     return render(request, 'dashboard.html', {'user': request.user})
+
+def home_view(request):
+    # If user is already logged in, redirect to dashboard
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+    
+    return render(request, 'home.html')
